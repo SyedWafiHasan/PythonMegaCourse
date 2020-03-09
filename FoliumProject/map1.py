@@ -24,7 +24,7 @@ fg = folium.FeatureGroup("My Group")
 
 for lt, ln, n, el in zip(lat, lon, name, elev):
 	s = n + "\n" + str(el) +" metres"
-	fg.add_child(folium.Marker(location=[lt, ln], popup=s, icon=folium.Icon(colour_producer(int(el)))))   
+	fg.add_child(folium.CircleMarker(location=[lt, ln], radius=6, fill_color=colour_producer(el), popup=s, color='grey', fill_opacity=0.5))   
 
 map.add_child(fg)
 
