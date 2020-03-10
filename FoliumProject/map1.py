@@ -1,6 +1,6 @@
 import folium
 import pandas
-# TODO : Exercise 113
+
 def colour_producer(elevation):
 	if elevation < 1000:
 		return 'blue'
