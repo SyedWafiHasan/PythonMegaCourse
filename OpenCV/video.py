@@ -1,18 +1,22 @@
 import cv2
 import time
 
-a = 1
+first_frame = None
+
 video = cv2.VideoCapture(0)
 while True:
-	a += 1
 	check, frame = video.read()
+	# gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-	# time.sleep(3)
+	if first_frame is None:
+		first_frame = frame
+		# first_frame = gray
+
 	cv2.imshow("Title", frame)
-	key = cv2.waitKey(1)
+	# cv2.imshow("Title", gray)
+	key = cv2.waitKey(1/10)
 	if key == ord('q'):
 		break
 
-print(a)
 video.release()
 cv2.destroyAllWindows()
